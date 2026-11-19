@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TransporteUrbanoAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5b996650ac23dc00909c4ae184963e67719b5a6b")]
 [assembly: System.Reflection.AssemblyProductAttribute("TransporteUrbanoAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TransporteUrbanoAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
