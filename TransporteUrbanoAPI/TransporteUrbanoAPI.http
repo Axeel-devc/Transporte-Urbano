@@ -1,0 +1,6 @@
+@TransporteUrbanoAPI_HostAddress = http://localhost:5051
+
+GET {{TransporteUrbanoAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

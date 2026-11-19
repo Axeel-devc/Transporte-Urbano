@@ -1,0 +1,157 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>El proyecto - Transporte Urbano</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/presentacion.css">
+</head>
+<body>
+
+    <header class="pr-nav">
+        <span class="brand"><span class="brand-logo" data-icon="bus"></span>Transporte Urbano</span>
+        <div class="pr-tabs" role="tablist">
+            <button class="pr-tab" role="tab" data-tab="proyecto">El proyecto</button>
+            <button class="pr-tab" role="tab" data-tab="equipo">Quiénes somos</button>
+        </div>
+        <div class="pr-user">
+            <a class="btn btn-sm" href="principal.html" id="panelLink" hidden>Ir al panel</a>
+            <span class="pr-chip-user" id="usuario"></span>
+            <button class="btn btn-white btn-sm" id="salirBtn" data-icon="logout">Salir</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- =================== PESTAÑA 1: EL PROYECTO =================== -->
+        <div class="pr-panel" data-panel="proyecto">
+            <div class="pr-band">
+                <div class="pr-wrap pr-hero">
+                    <span class="pr-tag">Trabajo Práctico Integrador</span>
+                    <h1 class="pr-h1">Una flota de colectivos,<br><span class="pr-sticker">un solo panel.</span></h1>
+                    <p class="pr-lead">Transporte Urbano es un sistema web para administrar la flota de una empresa de colectivos: qué coches tiene, en qué estado está cada uno y cuándo y cuánto costó cada service.</p>
+                </div>
+            </div>
+
+            <div class="pr-marquee" aria-hidden="true">
+                <div class="pr-marquee-track">
+                    <span>✱ FLOTA</span><span>✱ MANTENIMIENTOS</span><span>✱ DASHBOARD</span><span>✱ LÍNEAS</span><span>✱ COSTOS</span><span>✱ ESTADO DE LOS COCHES</span>
+                    <span>✱ FLOTA</span><span>✱ MANTENIMIENTOS</span><span>✱ DASHBOARD</span><span>✱ LÍNEAS</span><span>✱ COSTOS</span><span>✱ ESTADO DE LOS COCHES</span>
+                </div>
+            </div>
+
+            <div class="pr-wrap">
+                <div class="pr-section">
+                    <h2 class="pr-title">El problema que resuelve</h2>
+                    <p class="pr-sub">Una empresa con muchos colectivos necesita saber, en cualquier momento, con qué cuenta para salir a la calle.</p>
+                    <div class="pr-split">
+                        <div class="pr-box bg-pink">
+                            <h3>Sin un sistema</h3>
+                            <ul>
+                                <li>Los datos de la flota viven en planillas sueltas.</li>
+                                <li>No se sabe qué coches llevan meses sin revisión.</li>
+                                <li>Los costos de mantenimiento se suman a mano.</li>
+                            </ul>
+                        </div>
+                        <div class="pr-box bg-green">
+                            <h3>Con Transporte Urbano</h3>
+                            <ul>
+                                <li>Un listado único de colectivos con su línea y su estado.</li>
+                                <li>Cada service queda registrado con su tipo, fecha y costo.</li>
+                                <li>Un dashboard marca qué coches están atrasados.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pr-section">
+                    <h2 class="pr-title">Qué hace</h2>
+                    <p class="pr-sub">Cuatro piezas que trabajan juntas.</p>
+                    <div class="pr-features">
+                        <div class="pr-feature bg-yellow"><div class="pr-num">1</div><h3>Flota</h3><p>Alta, baja, modificación y consulta de colectivos, con filtros por línea y estado.</p></div>
+                        <div class="pr-feature bg-main"><div class="pr-num">2</div><h3>Mantenimientos</h3><p>Registro de cada service: coche, tipo de trabajo, fecha, descripción y costo.</p></div>
+                        <div class="pr-feature bg-pink"><div class="pr-num">3</div><h3>Dashboard</h3><p>Indicadores de la flota, costos por mes y coches con el mantenimiento atrasado.</p></div>
+                        <div class="pr-feature bg-green"><div class="pr-num">4</div><h3>Acceso seguro</h3><p>Inicio de sesión con token JWT. Los administradores gestionan; los visitantes conocen el proyecto.</p></div>
+                    </div>
+                </div>
+
+                <div class="pr-section">
+                    <h2 class="pr-title">Un vistazo</h2>
+                    <p class="pr-sub">Así se ve el panel de administración.</p>
+                    <div class="pr-shots">
+                        <div class="pr-browser">
+                            <div class="pr-bar"><span class="pr-dot"></span><span class="pr-dot"></span><span class="pr-dot"></span><span class="pr-url">transporteurbano/dashboard</span></div>
+                            <div class="pr-screen"><span>Captura del dashboard<small>img/dashboard.png</small></span><img src="img/dashboard.png" alt="Dashboard del sistema" onerror="this.remove()"></div>
+                            <div class="pr-cap">Dashboard: la flota de un vistazo.</div>
+                        </div>
+                        <div class="pr-browser">
+                            <div class="pr-bar"><span class="pr-dot"></span><span class="pr-dot"></span><span class="pr-dot"></span><span class="pr-url">transporteurbano/colectivos</span></div>
+                            <div class="pr-screen"><span>Captura de colectivos<small>img/colectivos.png</small></span><img src="img/colectivos.png" alt="Listado de colectivos" onerror="this.remove()"></div>
+                            <div class="pr-cap">Colectivos: alta, edición y baja.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pr-section pr-end">
+                    <h2 class="pr-title">Cómo está hecho</h2>
+                    <p class="pr-sub">Cada pedido recorre las mismas capas: el controller lo recibe, el service aplica las reglas de negocio y el repository habla con la base.</p>
+                    <div class="pr-flow">
+                        <span class="pr-node bg-yellow">Navegador</span><span class="pr-arrow">→</span>
+                        <span class="pr-node bg-main">Controller</span><span class="pr-arrow">→</span>
+                        <span class="pr-node bg-pink">Service</span><span class="pr-arrow">→</span>
+                        <span class="pr-node bg-green">Repository</span><span class="pr-arrow">→</span>
+                        <span class="pr-node">SQL Server</span>
+                    </div>
+                    <div class="pr-chips">
+                        <span class="pr-chip">C#</span><span class="pr-chip">ASP.NET Core Web API</span><span class="pr-chip">Entity Framework Core</span>
+                        <span class="pr-chip">SQL Server</span><span class="pr-chip">JWT</span><span class="pr-chip">HTML</span><span class="pr-chip">CSS</span><span class="pr-chip">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =================== PESTAÑA 2: QUIÉNES SOMOS =================== -->
+        <div class="pr-panel" data-panel="equipo" hidden>
+            <div class="pr-band">
+                <div class="pr-wrap pr-hero">
+                    <span class="pr-tag">El equipo</span>
+                    <h1 class="pr-h1">Quiénes <span class="pr-sticker">somos.</span></h1>
+                    <p class="pr-lead">Somos el grupo que diseñó y desarrolló este sistema como Trabajo Práctico Integrador.</p>
+                </div>
+            </div>
+
+            <div class="pr-wrap">
+                <div class="pr-section">
+                    <!-- Una tarjeta por integrante (hasta 6). Foto opcional en img/integrante1.jpg, integrante2.jpg, etc. -->
+                    <div class="pr-team">
+                        <div class="pr-member"><div class="pr-photo">AA<img src="img/integrante1.jpg" alt="" onerror="this.remove()"></div><div class="pr-info"><strong>Nombre Apellido</strong><span class="pr-role">Rol en el proyecto</span></div></div>
+                        <div class="pr-member"><div class="pr-photo">BB<img src="img/integrante2.jpg" alt="" onerror="this.remove()"></div><div class="pr-info"><strong>Nombre Apellido</strong><span class="pr-role">Rol en el proyecto</span></div></div>
+                        <div class="pr-member"><div class="pr-photo">CC<img src="img/integrante3.jpg" alt="" onerror="this.remove()"></div><div class="pr-info"><strong>Nombre Apellido</strong><span class="pr-role">Rol en el proyecto</span></div></div>
+                        <div class="pr-member"><div class="pr-photo">DD<img src="img/integrante4.jpg" alt="" onerror="this.remove()"></div><div class="pr-info"><strong>Nombre Apellido</strong><span class="pr-role">Rol en el proyecto</span></div></div>
+                    </div>
+                </div>
+
+                <div class="pr-section pr-end">
+                    <h2 class="pr-title">Sobre el trabajo</h2>
+                    <p class="pr-sub">Los datos de la cursada y el código del proyecto.</p>
+                    <div class="pr-about">
+                        <div class="pr-fact"><span>Materia</span><strong>Escribí acá la materia</strong></div>
+                        <div class="pr-fact"><span>Docentes</span><strong>Escribí acá los nombres</strong></div>
+                        <div class="pr-fact"><span>Año</span><strong>2026</strong></div>
+                    </div>
+                    <a class="btn btn-big" href="#" target="_blank" rel="noopener">Ver el repositorio en GitHub</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="pr-footer">Transporte Urbano. Trabajo Práctico Integrador. El panel de gestión está reservado a administradores.</footer>
+
+    <script src="js/auth.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/presentacion.js"></script>
+</body>
+</html>

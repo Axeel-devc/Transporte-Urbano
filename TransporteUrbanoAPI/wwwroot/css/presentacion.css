@@ -1,0 +1,507 @@
+﻿/* Pagina de presentacion: neobrutalismo. Usa las variables de styles.css */
+[hidden] {
+    display: none !important;
+}
+
+/* ---------- Barra superior ---------- */
+.pr-nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: .75rem 1.5rem;
+    background: var(--yellow);
+    border-bottom: 3px solid #000;
+    flex-wrap: wrap;
+}
+
+    .pr-nav .brand {
+        margin: 0;
+    }
+
+.pr-tabs {
+    display: flex;
+    gap: .6rem;
+    margin: 0 auto;
+}
+
+.pr-tab {
+    min-height: 40px;
+    padding: 0 1.2rem;
+    background: #fff;
+    border: var(--border);
+    border-radius: 999px;
+    box-shadow: 3px 3px 0 0 #000;
+    font: 700 15px "Space Grotesk", sans-serif;
+    cursor: pointer;
+    transition: transform .1s, box-shadow .1s;
+}
+
+    .pr-tab:hover {
+        transform: translate(1px, 1px);
+        box-shadow: 2px 2px 0 0 #000;
+    }
+
+    .pr-tab.active {
+        background: #000;
+        color: var(--yellow);
+        transform: translate(3px, 3px);
+        box-shadow: none;
+    }
+
+.pr-user {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+}
+
+.pr-chip-user {
+    padding: .2rem .85rem;
+    background: #fff;
+    border: var(--border);
+    border-radius: 999px;
+    font-weight: 700;
+}
+
+/* ---------- Estructura ---------- */
+.pr-panel {
+    animation: pr-in .3s ease-out;
+}
+
+@keyframes pr-in {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+}
+
+.pr-wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.pr-band {
+    background-image: linear-gradient(#0000000d 2px, transparent 2px), linear-gradient(90deg, #0000000d 2px, transparent 2px);
+    background-size: 40px 40px;
+}
+
+.pr-hero {
+    padding: 4.5rem 0 3.5rem;
+}
+
+.pr-tag {
+    display: inline-block;
+    padding: .2rem .9rem;
+    background: #fff;
+    border: var(--border);
+    border-radius: 999px;
+    font-weight: 700;
+    box-shadow: 2px 2px 0 0 #000;
+    transform: rotate(-2deg);
+    margin-bottom: 1.4rem;
+}
+
+.pr-h1 {
+    font-size: clamp(2.6rem, 8vw, 5.6rem);
+    font-weight: 700;
+    letter-spacing: -.05em;
+    line-height: 1;
+}
+
+.pr-sticker {
+    display: inline-block;
+    background: var(--yellow);
+    border: 3px solid #000;
+    box-shadow: 8px 8px 0 0 #000;
+    padding: 0 .7rem;
+    transform: rotate(-1.5deg);
+    margin-top: .6rem;
+}
+
+.pr-lead {
+    font-size: clamp(1.05rem, 2vw, 1.3rem);
+    max-width: 650px;
+    margin-top: 2rem;
+}
+
+.pr-section {
+    padding: 3.5rem 0 0;
+}
+
+.pr-title {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 700;
+    letter-spacing: -.03em;
+    margin-bottom: .5rem;
+}
+
+.pr-sub {
+    max-width: 620px;
+    color: var(--muted);
+    margin-bottom: 2rem;
+    font-size: 17px;
+}
+
+/* ---------- Cinta que se desplaza ---------- */
+.pr-marquee {
+    background: #000;
+    color: var(--yellow);
+    border-block: 3px solid #000;
+    overflow: hidden;
+    white-space: nowrap;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.pr-marquee-track {
+    display: inline-flex;
+    padding: .8rem 0;
+    animation: pr-slide 30s linear infinite;
+}
+
+    .pr-marquee-track span {
+        flex: none;
+        padding-right: 2rem;
+    }
+
+@keyframes pr-slide {
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* ---------- Problema y solucion ---------- */
+.pr-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.pr-box {
+    padding: 1.6rem;
+    border: var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+    .pr-box h3 {
+        font-size: 22px;
+        margin-bottom: .8rem;
+    }
+
+    .pr-box ul {
+        margin: 0;
+        padding-left: 1.1rem;
+        display: grid;
+        gap: .5rem;
+    }
+
+/* ---------- Funciones ---------- */
+.pr-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.5rem;
+}
+
+.pr-feature {
+    padding: 1.4rem;
+    border: var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: transform .12s, box-shadow .12s;
+}
+
+    .pr-feature:hover {
+        transform: translate(-2px, -2px) rotate(-.6deg);
+        box-shadow: 7px 7px 0 0 #000;
+    }
+
+.pr-num {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border: var(--border);
+    border-radius: 50%;
+    background: #fff;
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 1rem;
+}
+
+.pr-feature h3 {
+    font-size: 21px;
+    margin-bottom: .35rem;
+}
+
+/* ---------- Ventanas de navegador con capturas ---------- */
+.pr-shots {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.75rem;
+}
+
+.pr-browser {
+    border: var(--border);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    background: #fff;
+}
+
+.pr-bar {
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+    padding: .55rem .8rem;
+    background: #fff;
+    border-bottom: var(--border);
+}
+
+.pr-dot {
+    width: 12px;
+    height: 12px;
+    border: 2px solid #000;
+    border-radius: 50%;
+}
+
+    .pr-dot:nth-child(1) {
+        background: var(--red);
+    }
+
+    .pr-dot:nth-child(2) {
+        background: var(--yellow);
+    }
+
+    .pr-dot:nth-child(3) {
+        background: var(--green);
+    }
+
+.pr-url {
+    margin-left: .6rem;
+    flex: 1;
+    padding: .05rem .7rem;
+    background: var(--bg);
+    border: 2px solid #000;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.pr-screen {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 1rem;
+    background: repeating-linear-gradient(45deg, #fff 0 12px, #eef2ff 12px 24px);
+    font-weight: 600;
+}
+
+    .pr-screen small {
+        display: block;
+        font-weight: 400;
+        color: var(--muted);
+    }
+
+    .pr-screen img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+    }
+
+.pr-cap {
+    padding: .8rem 1rem;
+    border-top: var(--border);
+    font-weight: 600;
+}
+
+/* ---------- Arquitectura y tecnologias ---------- */
+.pr-flow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .7rem;
+    margin-bottom: 1.25rem;
+}
+
+.pr-node {
+    padding: .7rem 1.1rem;
+    border: var(--border);
+    border-radius: var(--radius);
+    box-shadow: 3px 3px 0 0 #000;
+    font-weight: 700;
+    background: #fff;
+}
+
+.pr-arrow {
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.pr-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .6rem;
+    margin-top: 1.5rem;
+}
+
+.pr-chip {
+    padding: .25rem .9rem;
+    background: #fff;
+    border: var(--border);
+    border-radius: 999px;
+    font-weight: 600;
+    box-shadow: 2px 2px 0 0 #000;
+}
+
+/* ---------- Equipo ---------- */
+.pr-team {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 1.75rem;
+}
+
+.pr-member {
+    border: var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    background: #fff;
+    transition: transform .15s;
+}
+
+    .pr-member:nth-child(odd) {
+        transform: rotate(-1deg);
+    }
+
+    .pr-member:nth-child(even) {
+        transform: rotate(1deg);
+    }
+
+    .pr-member:hover {
+        transform: rotate(0) translateY(-4px);
+    }
+
+.pr-photo {
+    position: relative;
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    font-size: 56px;
+    font-weight: 700;
+    border-bottom: var(--border);
+}
+
+.pr-member:nth-child(4n+1) .pr-photo {
+    background: var(--yellow);
+}
+
+.pr-member:nth-child(4n+2) .pr-photo {
+    background: var(--main);
+}
+
+.pr-member:nth-child(4n+3) .pr-photo {
+    background: var(--pink);
+}
+
+.pr-member:nth-child(4n+4) .pr-photo {
+    background: var(--green);
+}
+
+.pr-photo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pr-info {
+    padding: 1rem 1.1rem 1.2rem;
+}
+
+    .pr-info strong {
+        display: block;
+        font-size: 19px;
+    }
+
+.pr-role {
+    display: inline-block;
+    margin-top: .5rem;
+    padding: .05rem .65rem;
+    border: 2px solid #000;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 13px;
+    background: #fff;
+}
+
+.pr-about {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.pr-fact {
+    padding: 1.25rem;
+    border: var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    background: #fff;
+}
+
+    .pr-fact span {
+        display: block;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    .pr-fact strong {
+        font-size: 19px;
+    }
+
+.pr-footer {
+    margin-top: 4rem;
+    border-top: 3px solid #000;
+    background: #fff;
+    padding: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.pr-end {
+    padding-bottom: 1rem;
+}
+
+@media (max-width: 860px) {
+    .pr-split, .pr-shots {
+        grid-template-columns: 1fr;
+    }
+
+    .pr-tabs {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        margin: 0;
+    }
+
+    .pr-user {
+        margin-left: auto;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pr-marquee-track, .pr-panel {
+        animation: none;
+    }
+}

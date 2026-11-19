@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Transporte Urbano</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <section class="hero">
+        <nav class="topnav">
+            <span class="brand" style="margin:0"><span class="brand-logo" data-icon="bus"></span>Transporte Urbano</span>
+            <div style="display:flex;gap:.6rem">
+                <a class="btn btn-white btn-sm" href="login.html" id="navLogin">Iniciar sesión</a>
+                <a class="btn btn-yellow btn-sm" href="registro.html">Registrarse</a>
+            </div>
+        </nav>
+        <div>
+            <h1>Toda la flota,<br><span class="sticker">bajo control.</span></h1>
+            <p>Sistema de gestión de colectivos urbanos: administrá los coches, registrá sus mantenimientos y seguí el estado de cada línea desde un solo panel.</p>
+            <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+                <a class="btn btn-big" href="login.html" id="ctaLogin">Iniciar sesión</a>
+                <a class="btn btn-white btn-big" href="registro.html" id="ctaRegistro">Registrarse</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="card bg-yellow"><span class="feature-ico" data-icon="bus"></span><h3>Flota</h3><p>Alta, modificación y baja de colectivos, cada uno con su línea y su estado.</p></div>
+        <div class="card bg-main"><span class="feature-ico" data-icon="wrench"></span><h3>Mantenimientos</h3><p>Historial de services por coche, con tipo, fecha y costo.</p></div>
+        <div class="card bg-pink"><span class="feature-ico" data-icon="chart"></span><h3>Panel de control</h3><p>Estado de la flota, costos por mes y coches con el mantenimiento atrasado.</p></div>
+    </section>
+
+    <script src="js/auth.js"></script>
+    <script src="js/ui.js"></script>
+    <script>
+                document.querySelectorAll("[data-icon]").forEach(el => el.insertAdjacentHTML("afterbegin", icon(el.dataset.icon)));
+                if (sesionValida()) {   // si ya hay sesion, los botones llevan directo a donde corresponde
+                  const texto = rolActual() === "Admin" ? "Ir al panel" : "Ver el proyecto";
+                  ["ctaLogin", "navLogin"].forEach(id => {
+                    const a = document.getElementById(id);
+                    a.href = rutaInicial();
+                    a.textContent = texto;
+                  });
+                  document.getElementById("ctaRegistro").hidden = true;
+                }
+    </script>
+</body>
+</html>

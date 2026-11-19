@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mantenimientos - Transporte Urbano</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="app">
+  <aside id="sidebar" class="sidebar"></aside>
+  <div class="content">
+    <header id="topbar" class="topbar"></header>
+    <main class="main">
+
+<div class="page-head">
+  <div><h1>Mantenimientos</h1><p>Registrá y consultá los services de cada colectivo.</p></div>
+  <button class="btn" id="btnNuevo" data-icon="plus">Nuevo mantenimiento</button>
+</div>
+
+<div class="card">
+  <div class="toolbar">
+    <input class="control" id="buscar" placeholder="Buscar patente, tipo o descripción" aria-label="Buscar">
+    <select class="control" id="fCoche" aria-label="Filtrar por colectivo"></select>
+    <span class="muted" id="contador" style="margin-left:auto"></span>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Fecha</th><th>Patente</th><th>Tipo</th><th>Descripción</th><th class="num">Costo</th><th></th></tr></thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+</div>
+
+<dialog id="dlg">
+  <form id="form">
+    <div class="dialog-head"><h3 id="dlgTitulo"></h3></div>
+    <div class="dialog-body">
+      <div class="form-grid">
+        <div class="input-box raised"><select class="input" id="cocheSel"></select><label for="cocheSel">Colectivo</label></div>
+        <div class="input-box raised"><select class="input" id="tipoSel"></select><label for="tipoSel">Tipo</label></div>
+        <div class="input-box raised"><input class="input" id="fecha" type="date" required><label for="fecha">Fecha</label></div>
+        <div class="input-box"><input class="input" id="costo" type="number" min="0" step="0.01" placeholder=" "><label for="costo">Costo (opcional)</label></div>
+        <div class="input-box full"><input class="input" id="descripcion" placeholder=" " maxlength="250"><label for="descripcion">Descripción (opcional)</label></div>
+      </div>
+      <p class="form-error" id="formError" role="alert" style="margin-top:1rem"></p>
+    </div>
+    <div class="dialog-foot">
+      <button type="button" class="btn btn-white" id="btnCancelar">Cancelar</button>
+      <button type="submit" class="btn" id="btnGuardar">Guardar</button>
+    </div>
+  </form>
+</dialog>
+
+    </main>
+  </div>
+</div>
+<div id="toasts" class="toasts"></div>
+<script src="js/config.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/api.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/mantenimientos.js"></script>   
+</body>
+</html>

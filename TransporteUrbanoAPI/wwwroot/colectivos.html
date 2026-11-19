@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Colectivos - Transporte Urbano</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="app">
+  <aside id="sidebar" class="sidebar"></aside>
+  <div class="content">
+    <header id="topbar" class="topbar"></header>
+    <main class="main">
+
+<div class="page-head">
+  <div><h1>Colectivos</h1><p>Administrá la flota: alta, modificación, baja y consulta.</p></div>
+  <button class="btn" id="btnNuevo" data-icon="plus">Nuevo colectivo</button>
+</div>
+
+<div class="card">
+  <div class="toolbar">
+    <input class="control" id="buscar" placeholder="Buscar patente, marca o modelo" aria-label="Buscar">
+    <select class="control" id="fLinea" aria-label="Filtrar por línea"></select>
+    <select class="control" id="fEstado" aria-label="Filtrar por estado"></select>
+    <span class="muted" id="contador" style="margin-left:auto"></span>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Coche</th><th>Patente</th><th>Marca</th><th>Modelo</th><th>Línea</th><th>Estado</th><th></th></tr></thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+</div>
+
+<dialog id="dlg">
+  <form id="form">
+    <div class="dialog-head"><h3 id="dlgTitulo"></h3></div>
+    <div class="dialog-body">
+      <div class="form-grid">
+        <div class="input-box"><input class="input" id="patente" placeholder=" " maxlength="7" required><label for="patente">Patente (AB123CD)</label></div>
+        <div class="input-box raised"><select class="input" id="lineaSel"></select><label for="lineaSel">Línea</label></div>
+        <div class="input-box"><input class="input" id="marca" placeholder=" " maxlength="50"><label for="marca">Marca</label></div>
+        <div class="input-box"><input class="input" id="modelo" placeholder=" " maxlength="50"><label for="modelo">Modelo</label></div>
+        <div class="input-box raised full"><select class="input" id="estadoSel"></select><label for="estadoSel">Estado</label></div>
+      </div>
+      <p class="form-error" id="formError" role="alert" style="margin-top:1rem"></p>
+    </div>
+    <div class="dialog-foot">
+      <button type="button" class="btn btn-white" id="btnCancelar">Cancelar</button>
+      <button type="submit" class="btn" id="btnGuardar">Guardar</button>
+    </div>
+  </form>
+</dialog>
+
+    </main>
+  </div>
+</div>
+<div id="toasts" class="toasts"></div>
+<script src="js/config.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/api.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/colectivos.js"></script>   
+</body>
+</html>

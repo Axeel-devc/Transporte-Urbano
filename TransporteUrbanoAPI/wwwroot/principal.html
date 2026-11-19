@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Principal - Transporte Urbano</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="app">
+  <aside id="sidebar" class="sidebar"></aside>
+  <div class="content">
+    <header id="topbar" class="topbar"></header>
+    <main class="main">
+
+        <div class="page-head">
+            <div><h1>Dashboard</h1><p id="saludo"></p></div>
+            </div>
+
+            <div class="stats">
+            <div class="card stat bg-yellow"><div class="label">Colectivos</div><div class="value" id="sTotal">0</div></div>
+            <div class="card stat bg-green"><div class="label">En servicio</div><div class="value" id="sServicio">0</div></div>
+            <div class="card stat bg-pink"><div class="label">Sin mantenimiento en 6 meses</div><div class="value" id="sSinMant">0</div></div>
+            <div class="card stat bg-main"><div class="label">Costo de mantenimiento, 6 meses</div><div class="value" id="sCosto">$ 0</div></div>
+            </div>
+
+            <div class="grid-2">
+            <div class="card">
+                <div class="card-head"><h3>Colectivos por estado</h3><p>Situación actual de la flota.</p></div>
+                <div class="card-body"><div class="bars" id="barsEstado"></div></div>
+            </div>
+            <div class="card">
+                <div class="card-head"><h3>Colectivos por línea</h3><p>Cantidad de coches de cada línea.</p></div>
+                <div class="card-body"><div class="bars" id="barsLinea"></div></div>
+            </div>
+            </div>
+
+            <div class="grid-2">
+            <div class="card">
+                <div class="card-head"><h3>Costo de mantenimiento por mes</h3><p>Últimos 6 meses, en pesos.</p></div>
+                <div class="card-body"><div class="cols" id="cols"></div></div>
+            </div>
+            <div class="card">
+                <div class="card-head"><h3>Mantenimiento atrasado</h3><p>Colectivos sin ningún service en los últimos 6 meses.</p></div>
+                <div class="table-wrap" id="sinMant" style="max-height:260px;overflow-y:auto;margin-top:.9rem"></div>
+            </div>
+        </div>
+
+    </main>
+  </div>
+</div>
+<div id="toasts" class="toasts"></div>
+<script src="js/config.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/api.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/dashboard.js"></script>   
+</body>
+</html>
