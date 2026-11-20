@@ -62,13 +62,18 @@ public class ColectivoService : IColectivoService
 
     public void Delete(int nroCoche)
     {
-        if (_repo.GetById(nroCoche) == null)
-            throw new NoEncontradoException("El colectivo no existe");
+        Colectivo colectivo = _repo.GetById(nroCoche)
+            ?? throw new NoEncontradoException("El colectivo no existe");
 
         if (_repo.TieneRegistrosAsociados(nroCoche))
-            throw new ReglaNegocioException(
-                "No se puede eliminar: el colectivo tiene mantenimientos, servicios o asignaciones registrados. " +
-                "Cambiá su estado a \"Fuera de servicio\".");
+        {
+            int codigoFuera = _catalogo.GetCodigoEstado("Fuera de servicio")
+                ?? throw new ReglaNegocioException("No existe el estado \"Fuera de servicio\"");
+
+            colectivo.CodigoEstado = codigoFuera;
+            _repo.Update(colectivo);
+            return;
+        }
 
         _repo.Delete(nroCoche);
     }

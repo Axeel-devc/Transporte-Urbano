@@ -36,6 +36,10 @@ public class CatalogoRepository : ICatalogoRepository
             .Select(t => new ItemDto { Id = t.CodigoTipoMantenimiento, Descripcion = t.Descripcion })
             .ToList();
     }
+    public int? GetCodigoEstado(string descripcion) => _context.EstadosColectivos
+        .Where(e => e.Descripcion == descripcion)
+        .Select(e => (int?)e.CodigoEstado)
+        .FirstOrDefault();
 
     public bool ExisteLinea(int id) => _context.Lineas.Any(l => l.CodigoLinea == id);
     public bool ExisteEstado(int id) => _context.EstadosColectivos.Any(e => e.CodigoEstado == id);

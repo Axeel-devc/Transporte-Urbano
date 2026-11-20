@@ -10,4 +10,5 @@ public interface ICatalogoRepository
     bool ExisteLinea(int id);
     bool ExisteEstado(int id);
     bool ExisteTipoMantenimiento(int id);
+    int? GetCodigoEstado(string descripcion);
 }
